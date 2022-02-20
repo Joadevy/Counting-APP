@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Rajdhani:wght@300;400&family=Staatliches&display=swap');
 
 *{
     margin: 0;
@@ -21,14 +21,23 @@ header {
 header > h1 {
     font-family: 'Staatliches';
     font-weight: 700;
-    font-size: 45px;
-    color: #222;
+    font-size: 3rem;
+    color: antiquewhite;
 }
 
-header>p, .number {
+header>p {
     font-family: 'Rajdhani';
     font-weight: 400;
-    color: #222;
+    color: antiquewhite;
+    font-size: 1.2rem;
+}
+
+.number {
+    font-family: 'Bangers';
+    font-weight: 400;
+    color: antiquewhite;
+    text-decoration: underline;
+    font-size: 5rem;
 }
 
 main {
@@ -36,19 +45,29 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: 1.5px outset magenta;
+    background-color: #222;
+    padding: 5rem;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
 }
 
 .buttons {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-top: 2rem;
-    color: #222;
+    color: antiquewhite;
     display: flex;
     justify-content: space-evenly;
     width: 100%;
 }
 
 .buttons>button {
-    padding: .25rem;
+    padding: .4rem;
+    font-size: 1rem;
+    border: none;
+    background-color: antiquewhite;
+    color: #222;
+    border-radius: 5px;
 }
 
 button:hover {
