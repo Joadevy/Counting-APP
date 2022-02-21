@@ -1,3 +1,45 @@
+let value = 0; // It tracks the number based on the buttons the user presses.
+const buttons = document.querySelectorAll('.cta');
+const number = document.getElementById('number');
+let sound = new Audio();
+
+// Function for handle the sounds of the buttons.
+const playSound = (url) => {
+    sound.src = url;
+    sound.play();
+}
+
+// Adding for each button the listener and functions based in event.target.id
+buttons.forEach(btn => {
+    btn.addEventListener('click',(e) => {
+        if(e.target.id == 'decrease') {
+            value--;
+            playSound("assets/sound/decrease.mp3");
+        } else if(e.target.id == 'increase') {
+            value++;
+            playSound("assets/sound/increase.mp3")
+        } else if(e.target.id == 'reset') {
+            value = 0;
+            playSound("assets/sound/reset.mp3");
+        }
+
+        // Adding the colors according the value <,> or = than 0.
+        if(value > 0){
+            number.style.color = "rgb(69, 163, 69)";
+        } else if (value<0) {
+            number.style.color = "rgb(168, 88, 88)";
+        } else{
+            number.style.color = "antiquewhite";
+            number.style.opacity = "60%";
+        }
+
+        // Updating the value on the screen.
+        number.textContent = value;
+    })
+})
+
+/* First way that I achieved the result expected, less optimal.
+
 const increaseButton = document.getElementById('increase');
 const decreaseButton = document.getElementById('decrease');
 const resetButton = document.getElementById('reset');
@@ -32,7 +74,6 @@ reset.addEventListener('click', () => {
 
 const addColorToNumber = () => {
     let numbers = parseInt(number.textContent);
-    console.log(numbers)
     if (numbers > 0) {
         number.style.color = "rgb(69, 163, 69)";
     } else if (numbers < 0){
@@ -42,3 +83,4 @@ const addColorToNumber = () => {
         number.style.opacity = "60%";
     }
 }
+ */
