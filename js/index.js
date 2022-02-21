@@ -42,5 +42,3 @@ const addColorToNumber = () => {
         number.style.opacity = "60%";
     }
 }
-
- 

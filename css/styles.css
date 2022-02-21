@@ -64,27 +64,27 @@ main {
 }
 
 .buttons>button {
-    padding: .4rem;
+    padding: .5rem;
     font-size: 1rem;
     border: none;
     background-color: antiquewhite;
     color: #222;
-    border-radius: 5px;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
 }
 
 button:hover {
     cursor: pointer;
-}
-
-.neutral {
-    color: antiquewhite;
     opacity: 65%;
 }
 
-.green {
-    color: rgb(69, 163, 69);
-}
+@media only screen and (max-width:375px) {
+    main {
+        max-width: 100%;
+        padding: 4rem;
+    }
 
-.red {
-    color: rgb(168, 88, 88);
+    .buttons {
+        margin-right: 1.5rem;
+    }
 }
